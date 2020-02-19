@@ -18,4 +18,8 @@ const modal = (props) => (
     </Auxiliary>
 );
 
-export default React.memo(modal);
+function showPropHasChanged(prevMovie, nextMovie) {
+    return prevMovie.show === nextMovie.show;
+  }
+
+export default React.memo(modal, showPropHasChanged);
